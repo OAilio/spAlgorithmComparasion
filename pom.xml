@@ -4,8 +4,89 @@
   <artifactId>algorithmcomparison</artifactId>
   <version>1</version>
   
-  <properties>
-  	<maven.compiler.source>1.8</maven.compiler.source>
-  	<maven.compiler.target>1.8</maven.compiler.target>
-  </properties>
+ 	<properties>
+	  <project.mainclass>algorithmcomparison.Main</project.mainclass>
+	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	  <subcomponent.version>1.2.3</subcomponent.version>
+	  <maven.compiler.source>1.8</maven.compiler.source>
+	  <maven.compiler.target>1.8</maven.compiler.target>
+
+		<jdk.version>11</jdk.version>
+        <jqwik.version>1.5.0</jqwik.version>
+        <junit.version>5.7.1</junit.version>
+        <junitplatform.version>1.7.1</junitplatform.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platform-commons</artifactId>
+            <version>${junitplatform.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>net.jqwik</groupId>
+            <artifactId>jqwik</artifactId>
+            <version>${jqwik.version}</version>
+            <scope>test</scope>
+        </dependency>
+	</dependencies>
+
+	<repositories>
+	  <repository>
+	    <snapshots>
+	      <enabled>false</enabled>
+	    </snapshots>
+	    <id>central</id>
+	    <name>Central Repository</name>
+	    <url>https://repo.maven.apache.org/maven2</url>
+	  </repository>
+	</repositories>
+	<build>
+		<extensions>
+		  <extension>
+		    <groupId>org.apache.maven.wagon</groupId>
+		    <artifactId>wagon-ssh</artifactId>
+		    <version>3.3.3</version>
+		  </extension>
+		</extensions>
+		<plugins>
+			<plugin>
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-compiler-plugin</artifactId>
+			  <version>3.8.1</version>
+			  <configuration>
+			    <source>${jdk.version}</source>
+			    <target>${jdk.version}</target>
+			  </configuration>
+			</plugin>
+			<plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>3.0.0-M5</version>
+            </plugin>
+			
+		</plugins>
+	</build>
 </project>
