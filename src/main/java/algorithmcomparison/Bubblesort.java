@@ -19,5 +19,14 @@ public class Bubblesort {
                 }
             }
         }
+        //If last element is smaller than the second last one
+        //TEMPORARY SOLUTION
+        if(array[len-2] > array[len-1]){
+            memory = array[len-2];
+            //Put the smaller element in the smaller index
+            array[len-2] = array[len-1];
+            //Insert the greater value to its new index from the memory-variable
+            array[len-1] = memory;
+        }
     }
 }
