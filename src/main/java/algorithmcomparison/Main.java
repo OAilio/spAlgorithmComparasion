@@ -17,7 +17,6 @@ public class Main {
 		// Pass dataset to different sorting algorithms
 		// Maybe do this asyncronically??
 		System.out.println("Passing dataset to sorting algorithms...");
-		Heapsort.sort(dataset);
 		
 		System.out.println("Algorithms completed");
 		System.out.println("Application done! Exiting...");
