@@ -1,7 +1,13 @@
 package algorithmcomparison;
 
 public class Insertionsort {
-	
+	/**
+	 * Sorts the given dataset using insertion sort
+	 * 
+	 * @param arr  The unsorted dataset
+	 * 
+	 * @return sorted  The sorted dataset
+	 */
 	public static int[] insertionsort(int[] arr) {
 		//Clone array
 		int[] sorted = arr.clone();
