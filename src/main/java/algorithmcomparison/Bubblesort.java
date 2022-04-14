@@ -1,7 +1,7 @@
 package algorithmcomparison;
 
 public class Bubblesort {
-    static void bubblesort(int[] array){
+    static int[] bubblesort(int[] array){
         int len = array.length;
         int memory = 0;
 
@@ -28,5 +28,6 @@ public class Bubblesort {
             //Insert the greater value to its new index from the memory-variable
             array[len-1] = memory;
         }
+        return array;
     }
 }
