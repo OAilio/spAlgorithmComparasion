@@ -2,6 +2,13 @@ package algorithmcomparison;
 
 public class Mergesort {
 	
+	/**
+	 * Runs the mergesort
+	 * 
+	 * @param arr
+	 * 
+	 * @return sorted
+	 */
 	public static int[] mergesort(int[] arr) {
 		//Clone array
 		int[] sorted = arr.clone();
@@ -13,6 +20,11 @@ public class Mergesort {
 		
 	}
 	
+	/**
+	 * Merges the arrays
+	 * 
+	 * @param arr, start, middle, end
+	 */
 	static void merge(int[] arr, int start, int middle, int end) {
 		//Find the sizes of the subarrays
 		int n1 = middle - start + 1;
@@ -59,7 +71,12 @@ public class Mergesort {
 		}
 	}
 	
-	static void sort(int arr[], int start, int end) {
+	/**
+	 * Sorts the arrays
+	 * 
+	 * @param arr, start, end
+	 */
+	static void sort(int[] arr, int start, int end) {
 		if(start < end) {
 			int middle = start + (end - start)/2;
 			
