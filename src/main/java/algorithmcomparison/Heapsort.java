@@ -4,7 +4,9 @@ public class Heapsort {
 
 	// Class where data is sorted with heap sort
 	
-	public static int[] sort(int arr[]) {
+	public static int[] sort(int data[]) {
+		
+		int arr[] = data.clone();
  
         // Build heap (rearrange array)
         for (int i = arr.length / 2 - 1; i >= 0; i--)
