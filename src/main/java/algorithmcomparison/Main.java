@@ -22,5 +22,4 @@ public class Main {
 		System.out.println("Application done! Exiting...");
 		System.exit(0);
 	}
-
 }
