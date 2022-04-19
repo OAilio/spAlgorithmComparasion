@@ -1,5 +1,8 @@
 package algorithmcomparison;
 
+/**
+ * Insertionsort
+ */
 public class Insertionsort {
 	/**
 	 * Sorts the given dataset using insertion sort

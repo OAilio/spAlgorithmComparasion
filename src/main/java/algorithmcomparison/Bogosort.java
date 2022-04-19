@@ -1,5 +1,8 @@
 package algorithmcomparison;
 
+/**
+ * Bogosort
+ */
 public class Bogosort {
 	/**
 	 * Sorts the array using Bogosort 
@@ -37,7 +40,9 @@ public class Bogosort {
 	/**
 	 * Swaps two array elements
 	 * 
-	 * @param a, i, j
+	 * @param a The array that is being sorted
+	 * @param i The index of the element that is swapped
+	 * @param j The index of the element that is swapped
 	 */
 	public static void swap(int[] a, int i, int j) {
 		//Swaps the elements

@@ -1,33 +1,34 @@
 package algorithmcomparison;
 
+/**
+ * Bubblesort
+ */
 public class Bubblesort {
-    static int[] bubblesort(int[] array){
+	/**
+	 * Sorts the dataset using bubblesort
+	 * 
+	 *  @param arr The unsorted dataset
+	 *  
+	 *  @return array
+	 */
+    static int[] bubblesort(int[] arr){
+    	//Clones the array
+    	int[] array = arr.clone();
+    	
         int len = array.length;
-        int memory = 0;
 
         //Loop
-        for (int a=0; a < len; a++){
-            for(int i=1; i < (len-1); i++){
+        for (int a=0; a < len -1; a++){
+            for(int i=0; i < (len-a-1); i++){
                 //If the element in the smaller index is greater, the elements switch places
-                if(array[i-1] > array[i]){
-                    //Memorize the greater value
-                    memory = array[i-1];
-                    //Put the smaller element in the smaller index
-                    array[i-1] = array[i];
-                    //Insert the greater value to its new index from the memory-variable
-                    array[i] = memory;
+                if(array[i] > array[i+1]){
+                    int temp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
                 }
             }
         }
-        //If last element is smaller than the second last one
-        //TEMPORARY SOLUTION
-        if(array[len-2] > array[len-1]){
-            memory = array[len-2];
-            //Put the smaller element in the smaller index
-            array[len-2] = array[len-1];
-            //Insert the greater value to its new index from the memory-variable
-            array[len-1] = memory;
-        }
+        
         return array;
     }
 }

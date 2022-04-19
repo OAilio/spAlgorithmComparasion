@@ -1,11 +1,14 @@
 package algorithmcomparison;
 
+/**
+ * Mergesort
+ */
 public class Mergesort {
 	
 	/**
 	 * Runs the mergesort
 	 * 
-	 * @param arr
+	 * @param arr The unsorted array
 	 * 
 	 * @return sorted
 	 */

@@ -2,9 +2,18 @@ package algorithmcomparison;
 
 import java.util.Random;
 
+/**
+ * Generates the dataset
+ */
 public class Data {
 	
-	// Class where a random data set is created
+	/**
+	 * Creates random dataset
+	 * 
+	 * @param size The size of the dataset
+	 * 
+	 * @return dataSet
+	 */
 	public static int[] createData(double size) {
 		int[] dataSet = new int[(int) size];
 		

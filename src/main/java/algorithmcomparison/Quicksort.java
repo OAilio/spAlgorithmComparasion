@@ -1,7 +1,21 @@
 package algorithmcomparison;
 
+/**
+ * Quicksort
+ */
 public class Quicksort {
-    public static int[] quickSort(int[] array) {
+	
+	/**
+	 * Sorts the dataset using quicksort
+	 * 
+	 * @param arr The unsorted dataset
+	 * 
+	 * @return arr
+	 */
+    public static int[] quickSort(int[] arr) {
+    	//Clones the array
+    	int[] array = arr.clone();
+    	
         int low = 0;
         int high = array.length -1;
 

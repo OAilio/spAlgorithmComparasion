@@ -1,9 +1,18 @@
 package algorithmcomparison;
 
+/**
+ * Heapsort
+ */
 public class Heapsort {
 
 	// Class where data is sorted with heap sort
-	
+	/**
+	 * Sorts the data with heap sort
+	 * 
+	 * @param data The unsorted data
+	 * 
+	 * @return arr
+	 */
 	public static int[] sort(int data[]) {
 		
 		int arr[] = data.clone();
@@ -26,6 +35,9 @@ public class Heapsort {
         return arr;
     }
 	
+	/**
+	 * Builds a heap from array
+	 */
 	public static void heapify(int arr[], int n, int i)
     {
         int biggest = i; // Initialize biggest as root
