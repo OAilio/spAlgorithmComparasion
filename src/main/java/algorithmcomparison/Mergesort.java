@@ -14,7 +14,13 @@ public class Mergesort implements Runnable {
 		System.out.println("Running a mergesort thread...");
 		mergesort(arr);
 		long end = System.nanoTime();
-		System.out.println("Mergesort complete in " + (end - start) + " nanoseconds");
+		int unit = -9;
+		while (end - start > 1000) {
+			start = start / 1000;
+			end = end / 1000;
+			unit = unit + 3;
+		}
+		System.out.println("Mergesort complete in " + (end - start) + "*10^" + unit + " seconds");
 	}
 	
 	/**

@@ -3,7 +3,6 @@ package algorithmcomparison;
 import java.util.Scanner;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -14,13 +13,13 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Set size of the dataset (10^size):");
 		double size = Math.pow(10, sc.nextInt());
+		sc.close();
 		
 		// Create a random dataset of given size
 		System.out.println("Creating a random dataset of size " + size + ("..."));
 		int[] dataset = Data.createData(size);
 		
 		// Pass dataset to different sorting algorithms
-		// Maybe do this asyncronically??
 		System.out.println("Passing dataset to sorting algorithms...");
 		
 		Runnable r1 = new Heapsort(dataset);

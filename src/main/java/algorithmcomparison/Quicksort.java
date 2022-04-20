@@ -14,7 +14,13 @@ public class Quicksort implements Runnable {
 		System.out.println("Running a quicksort thread...");
 		quickSort(arr);
 		long end = System.nanoTime();
-		System.out.println("Quicksort complete in " + (end - start) + " nanoseconds");
+		int unit = -9;
+		while (end - start > 1000) {
+			start = start / 1000;
+			end = end / 1000;
+			unit = unit + 3;
+		}
+		System.out.println("Quicksort complete in " + (end - start) + "*10^" + unit + " seconds");
 	}
     
     /**

@@ -1,7 +1,5 @@
 package algorithmcomparison;
 
-import java.util.Date;
-
 /**
  * Heapsort
  */
@@ -17,7 +15,13 @@ public class Heapsort implements Runnable {
 		System.out.println("Running a heapsort thread...");
 		sort(dataset);
 		long end = System.nanoTime();
-		System.out.println("Heapsort complete in " + (end - start) + " nanoseconds");
+		int unit = -9;
+		while (end - start > 1000) {
+			start = start / 1000;
+			end = end / 1000;
+			unit = unit + 3;
+		}
+		System.out.println("Heapsort complete in " + (end - start) + "*10^" + unit + " seconds");
 	}
 	
 	/**
