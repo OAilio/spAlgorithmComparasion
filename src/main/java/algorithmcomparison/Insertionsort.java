@@ -3,7 +3,19 @@ package algorithmcomparison;
 /**
  * Insertionsort
  */
-public class Insertionsort {
+public class Insertionsort implements Runnable {
+	private int arr[];
+	public Insertionsort(int[] dataset) {
+		this.arr = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a insertionsort thread...");
+		insertionsort(arr);
+		long end = System.nanoTime();
+		System.out.println("Insertionsort complete in " + (end - start) + " nanoseconds");
+	}
 	/**
 	 * Sorts the given dataset using insertion sort
 	 * 

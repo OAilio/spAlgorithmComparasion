@@ -1,11 +1,25 @@
 package algorithmcomparison;
 
+import java.util.Date;
+
 /**
  * Heapsort
  */
-public class Heapsort {
-
+public class Heapsort implements Runnable {
 	// Class where data is sorted with heap sort
+	private int dataset[];
+	public Heapsort(int[] dataset) {
+		this.dataset = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a heapsort thread...");
+		sort(dataset);
+		long end = System.nanoTime();
+		System.out.println("Heapsort complete in " + (end - start) + " nanoseconds");
+	}
+	
 	/**
 	 * Sorts the data with heap sort
 	 * 
@@ -13,9 +27,9 @@ public class Heapsort {
 	 * 
 	 * @return arr
 	 */
-	public static int[] sort(int data[]) {
-		
-		int arr[] = data.clone();
+	public static int[] sort(int dataset[]) {
+		// Clone the array
+		int arr[] = dataset.clone();
  
         // Build heap (rearrange array)
         for (int i = arr.length / 2 - 1; i >= 0; i--)

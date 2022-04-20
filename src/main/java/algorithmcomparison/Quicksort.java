@@ -3,7 +3,19 @@ package algorithmcomparison;
 /**
  * Quicksort
  */
-public class Quicksort {
+public class Quicksort implements Runnable {
+	private int arr[];
+	public Quicksort(int[] dataset) {
+		this.arr = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a quicksort thread...");
+		quickSort(arr);
+		long end = System.nanoTime();
+		System.out.println("Quicksort complete in " + (end - start) + " nanoseconds");
+	}
     
     /**
      * Sorts the dataset using quicksort

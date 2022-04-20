@@ -3,7 +3,19 @@ package algorithmcomparison;
 /**
  * Bubblesort
  */
-public class Bubblesort {
+public class Bubblesort implements Runnable {
+	private int arr[];
+	public Bubblesort(int[] dataset) {
+		this.arr = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a bubblesort thread...");
+		bubblesort(arr);
+		long end = System.nanoTime();
+		System.out.println("Bubblesort complete in " + (end - start) + " nanoseconds");
+	}
 	/**
 	 * Sorts the dataset using bubblesort
 	 * 

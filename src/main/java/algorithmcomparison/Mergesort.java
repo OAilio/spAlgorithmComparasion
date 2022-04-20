@@ -3,7 +3,19 @@ package algorithmcomparison;
 /**
  * Mergesort
  */
-public class Mergesort {
+public class Mergesort implements Runnable {
+	private int arr[];
+	public Mergesort(int[] dataset) {
+		this.arr = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a mergesort thread...");
+		mergesort(arr);
+		long end = System.nanoTime();
+		System.out.println("Mergesort complete in " + (end - start) + " nanoseconds");
+	}
 	
 	/**
 	 * Runs the mergesort
