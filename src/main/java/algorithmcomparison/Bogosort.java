@@ -3,7 +3,25 @@ package algorithmcomparison;
 /**
  * Bogosort
  */
-public class Bogosort {
+public class Bogosort implements Runnable {
+	private int arr[];
+	public Bogosort(int[] dataset) {
+		this.arr = dataset;
+	}
+
+	public void run() {
+		long start = System.nanoTime();
+		System.out.println("Running a bogosort thread...");
+		bogosort(arr);
+		long end = System.nanoTime();
+		int unit = -9;
+		while (end - start > 1000) {
+			start = start / 1000;
+			end = end / 1000;
+			unit = unit + 3;
+		}
+		System.out.println("Bogosort complete in " + (end - start) + "*10^" + unit + " seconds");
+	}
 	/**
 	 * Sorts the array using Bogosort 
 	 * 
